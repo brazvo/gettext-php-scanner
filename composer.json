@@ -1,0 +1,24 @@
+{
+  "name": "brazvo/gettext-php-scanner",
+  "description": "Php scanner and generator of .po files or .php files with prepared translations.",
+  "minimum-stability": "dev",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Branislav Zvolensky",
+      "email": "brano@zvolensky.info"
+    },
+    {
+      "name": "Eslam Mahmoud",
+      "email": "contact@eslam.me"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpScanner\\": "src/"
+    }
+  }
+}
