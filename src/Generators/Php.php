@@ -30,6 +30,7 @@ return array(\n
         $oldData = array();
         if (file_exists($this->file)) {
             $oldData = include $this->file;
+            $tmpOldData = $oldData;
         }
 
         $rows = '';
@@ -39,7 +40,13 @@ return array(\n
             //Check if old key exists
             if (key_exists($line, $oldData)) {
                 $rows .= "\t'{$line}' => '{$oldData[$line]}',\n";
+                unset($tmpOldData[$line]);
             }
+        }
+
+        // keep manually adde records into file
+        foreach ($tmpOldData as $k => $line) {
+            $rows .= "\t'{$k}' => '{$line}',\n";
         }
 
         //handle new rows
